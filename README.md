@@ -17,7 +17,7 @@ set FLASK_APP=flask_app.py
 python -m flask run
 
 
-------------------
+
 Linux:
 ------------------
 export FLASK_ENV=development
