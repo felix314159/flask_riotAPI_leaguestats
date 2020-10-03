@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html><head>
+  <title>League Stats</title>
+<style>
+.server input {
+    font-size: 24px;
+
+}
+option {
+    /* Whatever color  you want */
+    background-color: #000000;
+}
+    .switch {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .off
+    {
+      color: white;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 70%;
+      font-size: 8px;
+      font-family: Verdana, sans-serif;
+    }
+
+    .on
+    {
+      color: white;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 30%;
+      font-size: 8px;
+      font-family: Verdana, sans-serif;
+    }
+
+    input:checked+ .slider .on
+    {display: block;}
+
+    input:checked + .slider .off
+    {display: none;}
+
+    .ondisplay {
+      display: inline-block;
+      position: absolute;
+      top: 8px;
+      right: 70px;
+
+    }
+    .ondisplay > div {
+       display: inline-block;
+    }
+
+
+    .dark-mode {
+      filter: invert(100%);
+      }
+
+
+</style>
+</head>
+<body style="background-color:#FFFFFF;">
+
+<h1>League Stats</h1>
+
+<div class="server">
+  <form action="{{url_for('overview')}}" method="post">
+    <label for="server"><p style="font-size:26px">Server:</p></label><br>
+    <select name="server" id="server_dropdown" style="width:320px; height:36px; font-size:20px; background-color: white;">
+      <option style="color:white" value="Brazil">Brazil</option>
+      <option style="color:white" value="Europe Nordic & East">Europe Nordic & East</option>
+      <option style="color:white" value="Europe West" selected>Europe West</option>
+      <option style="color:white" value="Japan">Japan</option>
+      <option style="color:white" value="Korea">Korea</option>
+      <option style="color:white" value="Latin America North">Latin America North</option>
+      <option style="color:white" value="Latin America South">Latin America South</option>
+      <option style="color:white" value="North America">North America</option>
+      <option style="color:white" value="Oceania">Oceania</option>
+      <option style="color:white" value="Russia">Russia</option>
+      <option style="color:white" value="Turkey">Turkey</option>
+    </select>
+    <label for="fname"><p style="font-size:26px">Summoner:</p></label><br>
+    <input type="text" id="summoner" name="summoner" value=""><br/><br/>
+    <input type="submit" value="Search">
+
+
+<br/><br/><br/><br/>Notes:<br/><br/>- Dark Mode doesn't support every browser. I recommend using chromium. More browsers supported soon!<br/><br/>- Live Game Overview is still in Beta and might not work for everyone.<br/><br/>- Website might be loading slow if many people use it at the same time.
+
+  </form>
+</div>
+
+<div class="ondisplay">
+  <div><strong>Dark mode:</strong>
+  </div></div>
+<label class="switch">
+<input type="checkbox" id="togBtn">
+<div class="slider round"><span class="on">ON</span><span class="off">OFF</span></div>
+</label>
+
+
+<div style="position: relative; ; background-color: white; width: 1100px; height: 600px;">
+    <div style="position: absolute; bottom: 5px; background-color: white">
+      This website was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+    </div>
+</div>
+
+<script>
+let button = document.getElementById("togBtn")
+var dark_mode_enabled = localStorage.getItem('dark_mode_enabled');
+if (dark_mode_enabled == "1")
+{
+  // click to set the switch into the correct position "on"
+  button.click();
+  document.documentElement.classList.toggle('dark-mode')
+}
+
+button.addEventListener('click', () => {
+  var dark_mode_enabled = localStorage.getItem('dark_mode_enabled');
+  if (dark_mode_enabled == "1")
+  {
+    localStorage.setItem('dark_mode_enabled', "0");
+  }
+  else {
+      localStorage.setItem('dark_mode_enabled', "1");
+  }
+
+  document.documentElement.classList.toggle('dark-mode')})
+
+</script>
+
+</body>
+</html>

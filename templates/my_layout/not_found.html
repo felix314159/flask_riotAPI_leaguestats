@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head><title>Not found</title>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .column {
+    float: left;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    height: 90px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+  body {
+    font-family: "Lato", sans-serif;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #666666;
+    display: block;
+  }
+
+  .sidenav a:hover {
+    color: #000000;
+  }
+
+  .main {
+    margin-left: 160px;
+    font-size: 28px;
+    padding: 0px 10px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .currentLink {
+     background-color: #eeeeee;
+  }
+
+
+
+
+
+  .switch {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .off
+  {
+    color: white;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 70%;
+    font-size: 8px;
+    font-family: Verdana, sans-serif;
+  }
+
+  .on
+  {
+    color: white;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 30%;
+    font-size: 8px;
+    font-family: Verdana, sans-serif;
+  }
+
+  input:checked+ .slider .on
+  {display: block;}
+
+  input:checked + .slider .off
+  {display: none;}
+
+  .ondisplay {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    right: 70px;
+
+  }
+  .ondisplay > div {
+     display: inline-block;
+  }
+
+
+  .dark-mode {
+    filter: invert(100%);
+    }
+
+  </style>
+
+</head>
+
+
+<body style="background-color:#FFFFFF;">
+
+
+  <div class="row">
+
+
+    <div class="ondisplay">
+      <div><strong>Dark mode:</strong>
+      </div></div>
+    <label class="switch">
+    <input type="checkbox" id="togBtn">
+    <div class="slider round"><span class="on">ON</span><span class="off">OFF</span></div>
+  </label>
+
+  <div class="column" style="background-color:#fff;">
+    <h3>Summoner + Server combination doesn't exist.</h3>
+    <p><form action="/">
+        <input type="submit" value="Try again">
+    </form></p>
+  </div>
+
+</div>
+
+<script>
+
+let button = document.getElementById("togBtn")
+var dark_mode_enabled = localStorage.getItem('dark_mode_enabled');
+if (dark_mode_enabled == "1")
+{
+  // click to set the switch into the correct position "on"
+  button.click();
+  document.documentElement.classList.toggle('dark-mode')
+}
+
+button.addEventListener('click', () => {
+  var dark_mode_enabled = localStorage.getItem('dark_mode_enabled');
+  if (dark_mode_enabled == "1")
+  {
+    localStorage.setItem('dark_mode_enabled', "0");
+  }
+  else {
+      localStorage.setItem('dark_mode_enabled', "1");
+  }
+
+  document.documentElement.classList.toggle('dark-mode')})
+
+</script>
+</body>
+</html>
