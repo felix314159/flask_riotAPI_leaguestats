@@ -10,12 +10,18 @@ After installing all dependencies open a CMD or shell in the folder where flask_
 
 Windows:
 set FLASK_ENV=production
+
 set FLASK_APP=flask_app.py
+
 python -m flask run
+
+
 
 Linux:
 export FLASK_ENV=development
+
 export FLASK_APP=flask_app.py
+
 python3 -m flask run
 
 Then open a browser and open the URL shown in the terminal.
