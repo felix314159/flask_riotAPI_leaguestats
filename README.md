@@ -9,6 +9,7 @@ A website that you can run locally or on a server which takes a summoner name an
 After installing all dependencies open a CMD or shell in the folder where flask_app.py is located and use the following commands:
 
 Windows:
+------------------
 set FLASK_ENV=production
 
 set FLASK_APP=flask_app.py
@@ -16,14 +17,14 @@ set FLASK_APP=flask_app.py
 python -m flask run
 
 
-
+------------------
 Linux:
 export FLASK_ENV=development
 
 export FLASK_APP=flask_app.py
 
 python3 -m flask run
-
+------------------
 Then open a browser and open the URL shown in the terminal.
 I also host this website on Pythonanywhere, it was pretty easy to set up.
 
