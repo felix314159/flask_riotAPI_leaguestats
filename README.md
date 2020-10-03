@@ -24,7 +24,7 @@ export FLASK_ENV=development
 export FLASK_APP=flask_app.py
 
 python3 -m flask run
-------------------
+
 Then open a browser and open the URL shown in the terminal.
 I also host this website on Pythonanywhere, it was pretty easy to set up.
 
