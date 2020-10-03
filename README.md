@@ -34,6 +34,7 @@ I also host this website on Pythonanywhere, it was pretty easy to set up.
 - Mastery list that includes every champ and if you still can get a chest for it this season
 - Overview of the last 5 games played with information such as cs, avg cs / min, cs / min compared to lane opponent, items bought, wards placed / killed, ...
 - Live Game overview if you are currently ingame (shows all champions picked, their talents, mastery, acc levels, ranks, ...)
+- Not a stat but the website features a dark mode that I am proud of because I had no idea about web design and I learned a lot while trying to implement it
 
 The live game overview is a bit buggy it doesn't throw errors but sometimes even though a summoner is currently ingame it shows that he is not ingame.
 Might fix it someday but my code became one huge mess and I really hate every second I spend debugging it lmao.
