@@ -29,7 +29,7 @@ python3 -m flask run
 Then open a browser and open the URL shown in the terminal.
 I also host this website on Pythonanywhere, it was pretty easy to set up.
 
-# Stats
+# Which stats does the website show?
 - Account overview stuff like acc lvl, current rank, amount games played, winrate, ...
 - Mastery list that includes every champ and if you still can get a chest for it this season
 - Overview of the last 5 games played with information such as cs, avg cs / min, cs / min compared to lane opponent, items bought, wards placed / killed, ...
