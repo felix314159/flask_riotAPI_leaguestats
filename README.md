@@ -1,5 +1,5 @@
 # flask_riotAPI_leaguestats
-Proof-of-concept website inspired by op.gg, written by myself from scratch
+League of Legends stats website inspired by op.gg, written by me from scratch using Flask.
 
 
 # What is this?
